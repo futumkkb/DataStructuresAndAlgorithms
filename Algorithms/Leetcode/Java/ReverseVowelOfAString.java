@@ -5,9 +5,7 @@ class ReverseVowelOfAString {
         char[] ch = s.toCharArray();
         while (left < right) {
             if (isVowel(ch[left]) && isVowel(ch[right])) {
-                char temp = ch[left];
-                ch[left] = ch[right];
-                ch[right] = temp;
+                swap(ch, left, right);
                 left++;
                 right--;
             } else if (isVowel(ch[left])) {
@@ -25,5 +23,11 @@ class ReverseVowelOfAString {
                 c.equals('i') || c.equals('I') ||
                 c.equals('o') || c.equals('O') ||
                 c.equals('u') || c.equals('U');
+    }
+
+    public void swap(char[] arr, int pos0, int pos1) {
+        char temp = arr[pos0];
+        arr[pos0] = arr[pos1];
+        arr[pos1] = temp;
     }
 }
